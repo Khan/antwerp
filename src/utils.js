@@ -24,6 +24,9 @@ function getCommands() {
     for (const workspace of getWorkspaces()) {
         const pkgPath = path.join(workspace, "package.json");
         const pkg = JSON.parse(fs.readFileSync(pkgPath, "utf8"));
+        if (pkg.private) {
+            continue;
+        }
         const tag = `${pkg.name}@${pkg.version}`;
         if (!allTags.includes(tag)) {
             commands.push(`git tag ${tag}`);

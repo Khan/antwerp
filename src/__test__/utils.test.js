@@ -123,4 +123,8 @@ describe("packages", () => {
         bumpVersion("packages/public-dep", "major");
         expect(getPackages()["@fixture/public-dep"].version).toEqual("1.0.0");
     });
+
+    runTest("private-pkg", "should not be published", () => {
+        expect(getCommands()).toEqual([]);
+    });
 });

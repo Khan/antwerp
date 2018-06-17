@@ -1,5 +1,5 @@
 {
     "private": true,
-    "name": "@fixture/private-dep",
+    "name": "@fixture/private-pkg",
     "version": "0.0.1"
 }
