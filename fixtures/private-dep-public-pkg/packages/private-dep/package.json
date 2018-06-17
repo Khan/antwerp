@@ -1,0 +1,5 @@
+{
+    "private": true,
+    "name": "@fixture/private-dep",
+    "version": "0.0.1"
+}

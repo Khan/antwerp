@@ -1,0 +1,7 @@
+{
+    "name": "@fixture/public-pkg",
+    "version": "0.0.1",
+    "dependencies": {
+        "@fixture/private-dep": "^0.0.1"
+    }
+}
