@@ -22,6 +22,13 @@ try {
             console.log(`would run: ${command}`);
         }
     }
+
+    if (!argv["dry-run"]) {
+        console.log("pushing tags");
+        child_process.execSync("git push --tags");
+    } else {
+        console.log(`would run: git push --tags`);
+    }
 } catch (e) {
     console.log(e);
     process.exit(1);
