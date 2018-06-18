@@ -18,6 +18,7 @@ function getWorkspaces() {
 // We assume that if a there's a tag for the current version of a package that
 // it's been published already.  In the future we should check if that version
 // exists on npm and attempt to republish the package if it isn't.
+// See https://github.com/Khan/antwerp/issues/3.
 function getCommands() {
     const commands = [];
     const allTags = getTags();
@@ -70,10 +71,10 @@ function runChecks(verbose = false) {
             // Check that depedency versions are satisified
             // TODO: fallback to check if any tags exist that would satisfy the dep
             if (!semver.satisfies(pkgVerMap[depName], deps[depName])) {
-                throw new Error(`${depName}@${pkgVerMap[depName]} doesn't satify ${depName}@${deps[depName]}`)
+                throw new Error(`${depName}@${pkgVerMap[depName]} doesn't satisfy ${depName}@${deps[depName]}`)
             }    
 
-            // Check to see if any depedencies of public packages are private
+            // Check to see if any dependencies of public packages are private
             if (!pkgJsonMap[pkgName].private && pkgJsonMap[depName].private) {
                 throw new Error(`${pkgName} is public but ${depName} is private`);
             }

@@ -1,7 +1,7 @@
 {
   "name": "antwerp",
   "version": "0.0.1",
-  "description": "",
+  "description": "A tool for publishing multiple packages in mono-repos",
   "main": "index.js",
   "scripts": {
     "test": "jest"

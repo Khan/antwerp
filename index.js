@@ -29,6 +29,8 @@ try {
     } else {
         console.log(`would run: git push --tags`);
     }
+
+    process.exit(0);
 } catch (e) {
     console.log(e);
     process.exit(1);
